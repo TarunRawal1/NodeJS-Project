@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Form</title>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      h1 {
+        text-align: center;
+        font-size: 24px; /* Adjust size as needed */
+        color: #007bff; /* Matching the form border color for consistency */
+        margin-bottom: 20px; /* Adds some space between the heading and the form */
+      }
+      form {
+        border: 2px solid #007bff; /* Blue border */
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        width: 300px; /* Fixed width */
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="password"] {
+        margin-bottom: 10px; /* Space between inputs */
+        width: calc(100% - 22px); /* Full width minus padding */
+        padding: 10px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px; /* Space above inputs */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Registration</h1>
+      <form method="GET" action="http://localhost:7000/register">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
+        <input type="submit" value="Register" />
+      </form>
+    </div>
+  </body>
+</html>

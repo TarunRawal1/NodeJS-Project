@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif; /* Adds a more professional font */
+      }
+      form {
+        width: 40%; /* Adjusts the width of the form */
+        min-width: 300px; /* Ensures form is not too small on narrow screens */
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+        border-radius: 5px; /* Rounds the corners */
+        background-color: #f9f9f9; /* Light background color */
+      }
+      label,
+      input {
+        display: block; /* Makes label and input stack vertically */
+        width: 100%;
+        margin-bottom: 10px; /* Adds space between each field */
+      }
+      input[type="email"],
+      input[type="password"],
+      input[type="submit"] {
+        padding: 10px;
+        border: 1px solid #ccc; /* Adds a border */
+        border-radius: 4px; /* Rounds the corners of the inputs */
+      }
+      input[type="submit"] {
+        background-color: #007bff; /* Adds a blue background to the submit button */
+        color: white;
+        cursor: pointer; /* Changes cursor to pointer on hover */
+      }
+      input[type="submit"]:hover {
+        background-color: #0056b3; /* Darkens the button slightly on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form method="get" action="http://localhost:7000/login">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
