@@ -9,11 +9,13 @@ app.use(bp.urlencoded({ extended: false }));
 
 async function JWTAuth(req, res, next) {
   const token = req.headers["authorization"];
-  console.log("token", token);
   if (!token) return res.status(400).send("Invalid token.");
   try {
+    const verify = await Employee.findOne({ jwt: token });
+    console.log("verify", verify);
+    if (verify.email != req.query.email)
+      return res.status(400).send("The token does not match the user.");
     const fin = jwt.verify(token, "jwtPrivateKey");
-    console.log("fin", fin);
     next();
   } catch (err) {
     return res.status(400).send("Invalid token.");
